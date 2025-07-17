@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Signup = () => {
@@ -9,11 +9,12 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [userName, setUsername] = useState("");
   const [roleNames, setRoles] = useState("");
+  const navigate = useNavigate();
   async function addNewEmployee(e) {
     e.preventDefault();
     const roleArray = roleNames.split(",").map((role) => role.trim());
     console.log(roleArray);
-    const req = await axios.post("http://localhost:8080/api/auth/register", {
+    const req = await axios.post("https://springboot-project-0j6s.onrender.com/api/auth/register", {
       name,
       email,
       password,
@@ -23,6 +24,8 @@ const Signup = () => {
     console.log(req);
     if (req.data) {
       alert(req.data);
+      navigate("/")
+
     } else {
       alert("Error during Sign up");
     }
@@ -79,7 +82,7 @@ const Signup = () => {
           <br />
           <button type="submit">Sign up</button>
         </form>
-        <p>Already an user??<Link to='/login'>Login</Link></p>
+        <p>Already an user??<Link to='/'>Login</Link></p>
       </div>
     </section>
   );

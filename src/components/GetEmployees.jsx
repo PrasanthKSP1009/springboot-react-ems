@@ -9,7 +9,7 @@ const GetEmployees = () => {
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/employee", {
+        const response = await axios.get("https://springboot-project-0j6s.onrender.com/employee", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -26,7 +26,7 @@ const GetEmployees = () => {
 
   const handleDelete = async (empId) => {
     try {
-      await axios.delete(`http://localhost:8080/employee/${empId}`, {
+      await axios.delete(`https://springboot-project-0j6s.onrender.com/employee/${empId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -9,7 +9,7 @@ const Login = () => {
   async function handleLogin(event) {
     event.preventDefault();
     try {
-      const request = await axios.post("http://localhost:8080/api/auth/login", {
+      const request = await axios.post("https://springboot-project-0j6s.onrender.com/api/auth/login", {
         userName,
         password,
       });
@@ -21,7 +21,7 @@ const Login = () => {
       console.log(request.data.roles);
       console.log(token);
       alert("Login Successful");
-      navigate("/");
+      navigate("/employees");
     } catch (e) {
       console.log("Login Error", e);
       alert("Invalid Cred");
