@@ -21,7 +21,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          EMS
+          Employee Management System
         </Link>
         <ul className="navbar-nav">
           <li className="nav-item">
